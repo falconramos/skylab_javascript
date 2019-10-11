@@ -1,0 +1,68 @@
+<!-- 
+    Seguindo o resultado do exercício anterior adicione um input em tela e um 
+    botão como a seguir:
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+
+    Ao clicar no botão, a função adicionar() deve ser disparada adicionando um 
+    novo item a lista de nomes baseado no nome preenchido no input e 
+    renderizando o novo item em tela juntos aos demais itens anteriores. Além 
+    disso, o conteúdo do input deve ser apagado após o clique. 
+-->
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            
+        </div>
+        <script>
+            /* Exercício 2.4 */
+            function adicionar(){
+                var inputElement = document.querySelector('#app input[name=nome]');
+                var ulElement = document.querySelector('#app ul');
+
+                var liElement = document.createElement('li');
+                var textLiElement = document.createTextNode(inputElement.value);
+                    liElement.appendChild(textLiElement);
+                    ulElement.appendChild(liElement);
+                inputElement.value = '';
+            }
+
+            /*****************/
+
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            var containerElement = document.querySelector('#app');
+
+            /* Exercício 2.4 */
+            var inputElement = document.createElement('input');
+                inputElement.setAttribute('type','text');
+                inputElement.setAttribute('name','nome');
+                containerElement.appendChild(inputElement);
+            /*****************/
+
+            var buttonElement = document.createElement('button');
+            var textButtonElement = document.createTextNode('Adicionar');
+                buttonElement.appendChild(textButtonElement);
+                /* Exercício 2.4 */
+                buttonElement.onclick = adicionar;
+                /*****************/
+                containerElement.appendChild(buttonElement);
+            
+            var ulElement = document.createElement('ul');
+                
+            for(nome of nomes){
+                var liElement = document.createElement('li');
+                var textElement = document.createTextNode(nome);
+                    liElement.appendChild(textElement);
+                
+                ulElement.appendChild(liElement);
+            }
+
+            containerElement.appendChild(ulElement);
+
+        </script>
+    </body>
+</html>

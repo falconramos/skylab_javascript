@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <div id="aula2_2">
+                <input type="text" name="nome" />
+                <button class="botao">Adicionar</button>
+            </div>
+            <div id="aula2_3">
+
+            </div>
+            <div id="aula2_4">
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+        <script>
+            // Aula 2.2
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao');
+
+            btnElement.onclick = function(){
+                var text = inputElement.value;
+                alert(text);
+            }
+
+            // Aula 2.3 
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href','http://google.com.br/');
+            linkElement.setAttribute('title','Site do Google');
+
+            var textElement = document.createTextNode('Acessar o Google');
+            linkElement.appendChild(textElement);
+
+            var containerElement = document.querySelector('#aula2_3');
+            containerElement.appendChild(linkElement);
+
+            // Aula 2.4
+            var boxElement = document.querySelector('.box');
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = '#f00';
+        </script>
+    </body>
+</html>

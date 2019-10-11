@@ -1,0 +1,67 @@
+<!-- 
+    Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o 
+    mouse por cima de algum quadrado troque sua cor para uma cor aleatória 
+    gerada pela função abaixo:
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor(); // #E943F 
+-->
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            
+        </div>
+        <script>
+            /* Exercício 2 */
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            /**************/
+            var containerElement = document.querySelector('#app');
+            
+            var buttonElement = document.createElement('button');
+                buttonElement.setAttribute('class','botao');
+            
+            var textElement = document.createTextNode('Clique aqui');
+                buttonElement.appendChild(textElement);
+                containerElement.appendChild(buttonElement);
+            
+            var renderElement = document.createElement('div');
+                renderElement.setAttribute('id','render');
+                containerElement.appendChild(renderElement);
+
+            buttonElement.onclick = function(){
+                var redBlockElement = document.createElement('div');
+                    redBlockElement.setAttribute('class','redblock');
+                    redBlockElement.style.width = 100;
+                    redBlockElement.style.height = 100;
+                    redBlockElement.style.margin = 5;
+                    redBlockElement.style.cssFloat = 'left';
+                    redBlockElement.style.backgroundColor = '#f00';
+                    /* Exercício 2 */
+                    redBlockElement.onmouseover = function(){
+                        var newColor = getRandomColor();
+                        this.style.backgroundColor = newColor;
+                    }
+                    /**************/
+
+                renderElement.appendChild(redBlockElement);    
+            }
+
+        </script>
+    </body>
+</html>

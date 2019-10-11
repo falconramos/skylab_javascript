@@ -1,0 +1,38 @@
+<!--
+    1º exercício
+    Crie uma função que dado o objeto a seguir:
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+    Retorne o seguinte conteúdo:
+        O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos 
+        Pinheiros" com nº 1293.
+-->
+
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <script>
+            var endereco = {
+                rua: "Rua dos pinheiros",
+                numero: 1293,
+                bairro: "Centro",
+                cidade: "São Paulo",
+                uf: "SP"
+            };
+
+            var resposta = 'O usuário mora em '+ endereco.cidade +' / ';
+            resposta+= endereco.uf +', no bairro '+ endereco.bairro +', na rua ';
+            resposta+= endereco.rua +' com nº '+endereco.numero;
+
+            console.log(resposta);
+        </script>
+    </body>
+</html>
